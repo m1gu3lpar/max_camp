@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramas UML y Cronograma Scrum de Miguel Campos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <h1>MAX CAMPO</h1>
+    
+    <div class="botones">
+        <button onclick="mostrarDiagrama('clases')">Diagrama de Clases</button>
+        <button onclick="mostrarDiagrama('objetos')">Diagrama de Objetos</button>
+        <button onclick="mostrarDiagrama('componentes')">Diagrama de Componentes</button>
+        <button onclick="mostrarDiagrama('despliegue')">Diagrama de Despliegue</button>
+        <button onclick="mostrarDiagrama('paquetes')">Diagrama de Paquetes</button>
+        <button onclick="mostrarDiagrama('casos_uso')">Diagrama de Casos de Uso</button>
+        <button onclick="mostrarDiagrama('actividades')">Diagrama de Actividades</button>
+        <button onclick="mostrarDiagrama('estados')">Diagrama de Estados</button>
+        <button onclick="mostrarDiagrama('secuencia')">Diagrama de Secuencia</button>
+        <button onclick="mostrarDiagrama('comunicacion')">Diagrama de Comunicación</button>
+        <button onclick="mostrarCronograma()">Ver Cronograma Scrum</button>
+    </div>
+
+    <div id="contenido-diagrama">
+        <p>Haz clic en un botón para ver el diagrama.</p>
+    </div>
+    
+    <div id="contenido-cronograma" style="display: none;">
+        <h2>Cronograma de Actividades Scrum</h2>
+        <table id="cronograma">
+            <thead>
+                <tr>
+                    <th>Fase</th>
+                    <th>Actividad</th>
+                    <th>Responsable</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Planificación</td>
+                    <td>Definición del Product Backlog</td>
+                    <td>Scrum Master y Equipo</td>
+                    <td>2 días</td>
+                </tr>
+                <tr>
+                    <td>Desarrollo</td>
+                    <td>Primera Iteración de Desarrollo</td>
+                    <td>Equipo de Desarrollo</td>
+                    <td>5 días</td>
+                </tr>
+                <tr>
+                    <td>Pruebas</td>
+                    <td>Pruebas Unitarias</td>
+                    <td>QA</td>
+                    <td>3 días</td>
+                </tr>
+                <tr>
+                    <td>Entrega</td>
+                    <td>Presentación del Producto</td>
+                    <td>Product Owner</td>
+                    <td>1 día</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <button onclick="descargarPDF()">Descargar Cronograma en PDF</button>
+    </div>
+</body>
+</html>
